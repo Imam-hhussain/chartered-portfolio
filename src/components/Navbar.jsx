@@ -90,34 +90,46 @@ const Navbar = () => {
             Home
           </a>
           <a
-            href="/services"
+            href="/accounting"
             className="block px-4 py-2 hover:bg-green-500 transition-colors rounded"
           >
-            Services
+             Accounting
           </a>
           <a
-            href="/about"
+            href="/about-us"
             className="block px-4 py-2 hover:bg-green-500 transition-colors rounded"
           >
-            About
+            About US
           </a>
           <a
-            href="/resume"
+            href="/consultancy"
             className="block px-4 py-2 hover:bg-green-500 transition-colors rounded"
           >
-            Resume
+           Consultancy
           </a>
           <a
-            href="/projects"
+            href="/support-services"
             className="block px-4 py-2 hover:bg-green-500 transition-colors rounded"
           >
-            Projects
+            Support Services
           </a>
           <a
-            href="/contact"
+            href="/traning"
             className="block px-4 py-2 hover:bg-green-500 transition-colors rounded"
           >
-            Contact
+            Traning
+          </a>
+          <a
+            href="/blogs"
+            className="block px-4 py-2 hover:bg-green-500 transition-colors rounded"
+          >
+            Blogs
+          </a>
+          <a
+            href="/contact-us"
+            className="block px-4 py-2 hover:bg-green-500 transition-colors rounded"
+          >
+            Contact US
           </a>
         </div>
       )}
