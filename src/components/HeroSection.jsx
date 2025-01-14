@@ -1,8 +1,8 @@
 function HeroSection() {
   return (
     <div>
-        <div className="">
-        <h1 className="text-white text-3xl font-bold">WELCOME TO <br/> <span className="text-green-600"> VIRTUAL ASSISSTANT </span>LLC</h1>
+        <div className="md:mt-12 mt-28 h-full">
+        <h1 className="text-white text-xl md:text-3xl font-bold">WELCOME TO <br/> <span className="text-green-600"> VIRTUAL ASSISSTANT </span>LLC</h1>
         </div>
        <div>
        <h1 className="text-white mt-3 text-xl">

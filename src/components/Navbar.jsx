@@ -4,9 +4,10 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-green-600 text-white font-bold shadow-md sticky top-0 z-50">
-      <div className="py-2">
-        <div className="hidden md:flex justify-between w-full px-4">
+    <nav className="bg-green-600  text-white py-1 font-bold shadow-md sticky top-0 z-50">
+      <div>
+        {/* Desktop menu */}
+        <div className="hidden lg:flex justify-between items-center">
           <a
             href="/"
             className="hover:bg-green-500 px-4 py-2 rounded-full transition-colors"
@@ -17,7 +18,7 @@ const Navbar = () => {
             href="/about-us"
             className="hover:bg-green-500 px-4 py-2 rounded-full transition-colors"
           >
-           About Us
+            About Us
           </a>
           <a
             href="/accounting"
@@ -32,16 +33,16 @@ const Navbar = () => {
             Consultancy
           </a>
           <a
-            href="/Support Services"
+            href="/support-services"
             className="hover:bg-green-500 px-4 py-2 rounded-full transition-colors"
           >
-           Support Services
+            Support Services
           </a>
           <a
-            href="/traning"
+            href="/training"
             className="hover:bg-green-500 px-4 py-2 rounded-full transition-colors"
           >
-            Traning
+            Training
           </a>
           <a
             href="/blogs"
@@ -53,13 +54,14 @@ const Navbar = () => {
             href="/contact-us"
             className="hover:bg-green-500 px-4 py-2 rounded-full transition-colors"
           >
-            Contact US
+            Contact Us
           </a>
         </div>
 
+        {/* Toggle button for smaller screens */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden focus:outline-none"
+          className="lg:hidden focus:outline-none"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -78,8 +80,9 @@ const Navbar = () => {
         </button>
       </div>
 
+      {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-green-600">
+        <div className="lg:hidden bg-green-600">
           <a
             href="/"
             className="block px-4 py-2 hover:bg-green-500 transition-colors rounded"

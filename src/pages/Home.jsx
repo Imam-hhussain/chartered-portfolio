@@ -10,12 +10,12 @@ function Home() {
   return (
     <div>
        <Main/>
-       <div className="px-28">
+       <div className="px-4 lg:px-28">
        <Service/>
        <VAccountant/> 
        </div>
        <AccountSoftware/>
-       <div className="px-28">
+       <div className="lg:px-28 px-4">
        <CustomerTestomonials/>
        </div>
         <TopFooter/>

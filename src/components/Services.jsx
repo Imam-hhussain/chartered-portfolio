@@ -52,13 +52,13 @@ const Service = () => {
   ];
 
   return (
-    <div className=" -mt-52">
+    <div className="md:-mt-52 mt-4">
       <div className=" ">
-        <h1 className="text-white text-3xl font-bold border-b-8 border-green-600 inline-block pb-2">
+        <h1 className="text-green sm:text-green-600 text-3xl font-bold border-b-8 border-green-600 inline-block pb-1">
           Our Services
         </h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-4">
           {services.map((service) => (
             <div
               key={service.id}
