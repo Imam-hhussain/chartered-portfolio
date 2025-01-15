@@ -1,4 +1,5 @@
 import { FaEnvelope, FaPhoneAlt } from "react-icons/fa"; // Import icons
+import Accountantlogo from "../../public/assets/logo1.png";
 import { BsWhatsapp } from "react-icons/bs";
 const Top_Navbar = () => {
  
@@ -8,7 +9,7 @@ const Top_Navbar = () => {
         <div className="md:flex md:justify-between mx-4 lg:mx-28">
           <div>
             <div className="flex items-center w-full justify-between">
-              <img src="/assets/logo.png" alt="Logo" className="h-20 w-auto" />
+              <img src={Accountantlogo} alt="Logo" className="h-20 w-auto" />
               <button className="px-3 font-bold py-2 text-white bg-blue-500 border border-blue-500 hover:bg-blue-600 hover:text-white transition rounded-md lg:hidden md:hidden">
                 Free Consultation
               </button>

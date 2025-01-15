@@ -5,6 +5,8 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 
+import AccountantLogo from "../../public/assets/logo.png"
+
 import footerImg from "../../public/assets/footerImg.jpg";
 
 function TopFooter() {
@@ -14,7 +16,7 @@ function TopFooter() {
         <div className="grid grid-cols-1 gap-6 text-center sm:text-left sm:grid-cols-2 lg:grid-cols-4 mx-4 md:mx-16 mb-8">
           <div className="px-6 lg:px-0">
             <h3 className="text-xl font-bold mb-4 text-blue-500 flex justify-start items-center">
-              <img src="/assets/logo.png" className="h-20 w-auto" alt="" />
+              <img src={AccountantLogo} className="h-20 w-auto" alt="" />
             </h3>
             <p className="text-sm mb-4 text-white">
               The Premium Accounting and Bookkeeping Services for Small and
