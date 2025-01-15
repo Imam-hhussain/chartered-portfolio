@@ -1,4 +1,4 @@
-import { FaEnvelope, FaPhoneAlt } from "react-icons/fa"; // Import icons
+import { FaEnvelope, FaPhoneAlt } from "react-icons/fa"; 
 import Accountantlogo from "../../public/assets/logo1.png";
 import { BsWhatsapp } from "react-icons/bs";
 const Top_Navbar = () => {
