@@ -15,12 +15,6 @@ function Home() {
        <div className="lg:px-28 px-4">
        <CustomerTestomonials/>
        </div>
-      
-     
-
-     
-
-      
     </div>
   )
 }
