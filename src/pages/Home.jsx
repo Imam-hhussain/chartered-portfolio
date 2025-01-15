@@ -5,7 +5,6 @@ import AccountSoftware from "../components/AccountSoftware"
 import CustomerTestomonials from "../components/CustomerTestomonials"
 import TopFooter from "../components/TopFooter"
 import Footer from "../components/Footer"
-
 function Home() {
   return (
     <div>

@@ -4,68 +4,16 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-green-600  text-white py-1 font-bold shadow-md sticky top-0 z-50">
-      <div>
-        {/* Desktop menu */}
-        <div className="hidden lg:flex justify-between items-center">
-          <a
-            href="/"
-            className="hover:bg-green-500 px-4 py-2 rounded-full transition-colors"
-          >
-            Home
-          </a>
-          <a
-            href="/about-us"
-            className="hover:bg-green-500 px-4 py-2 rounded-full transition-colors"
-          >
-            About Us
-          </a>
-          <a
-            href="/accounting"
-            className="hover:bg-green-500 px-4 py-2 rounded-full transition-colors"
-          >
-            Accounting
-          </a>
-          <a
-            href="/consultancy"
-            className="hover:bg-green-500 px-4 py-2 rounded-full transition-colors"
-          >
-            Consultancy
-          </a>
-          <a
-            href="/support-services"
-            className="hover:bg-green-500 px-4 py-2 rounded-full transition-colors"
-          >
-            Support Services
-          </a>
-          <a
-            href="/training"
-            className="hover:bg-green-500 px-4 py-2 rounded-full transition-colors"
-          >
-            Training
-          </a>
-          <a
-            href="/blogs"
-            className="hover:bg-green-500 px-4 py-2 rounded-full transition-colors"
-          >
-            Blogs
-          </a>
-          <a
-            href="/contact-us"
-            className="hover:bg-green-500 px-4 py-2 rounded-full transition-colors"
-          >
-            Contact Us
-          </a>
-        </div>
-
-        {/* Toggle button for smaller screens */}
+    <div className="absolute top-[85px] w-full md:px-4 lg:px-28 px-4" >
+       <nav className="bg-blue-500  text-white py-1 font-bold shadow-md top-0 z-50">
+      <div className="flex justify-end items-center px-6">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="lg:hidden focus:outline-none"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 ml-6"
+            className="h-6 w-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -79,61 +27,89 @@ const Navbar = () => {
           </svg>
         </button>
       </div>
+      <div className="hidden px-12 lg:flex justify-between items-center">
+        <a
+          href="/"
+          className="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-full transition-colors"
+        >
+          Home
+        </a>
+        <a
+          href="/aboutt-us"
+          className="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-full transition-colors"
+        >
+          About Us
+        </a>
+        <a
+          href="/blogs"
+          className="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-full transition-colors"
+        >
+          Blogs
+        </a>
+        <a
+          href="/contact-us"
+          className="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-full transition-colors"
+        >
+          Contact Us
+        </a>
+      </div>
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="lg:hidden bg-green-600">
+        <div className="lg:hidden bg-blue-500">
           <a
             href="/"
-            className="block px-4 py-2 hover:bg-green-500 transition-colors rounded"
+            className="bg-blue-500 hover:bg-blue-600 block px-4 py-2 rounded-full transition-colors"
           >
             Home
           </a>
           <a
             href="/accounting"
-            className="block px-4 py-2 hover:bg-green-500 transition-colors rounded"
+            className="bg-blue-500 hover:bg-blue-600 block px-4 py-2 rounded-full transition-colors"
           >
-             Accounting
+            Accounting
           </a>
           <a
             href="/about-us"
-            className="block px-4 py-2 hover:bg-green-500 transition-colors rounded"
+            className="bg-blue-500 hover:bg-blue-600 block px-4 py-2 rounded-full transition-colors"
           >
-            About US
+            About Us
           </a>
           <a
             href="/consultancy"
-            className="block px-4 py-2 hover:bg-green-500 transition-colors rounded"
+            className="bg-blue-500 hover:bg-blue-600 block px-4 py-2 rounded-full transition-colors"
           >
-           Consultancy
+            Consultancy
           </a>
           <a
             href="/support-services"
-            className="block px-4 py-2 hover:bg-green-500 transition-colors rounded"
+            className="bg-blue-500 hover:bg-blue-600 block px-4 py-2 rounded-full transition-colors"
           >
             Support Services
           </a>
           <a
-            href="/traning"
-            className="block px-4 py-2 hover:bg-green-500 transition-colors rounded"
+            href="/training"
+            className="bg-blue-500 hover:bg-blue-600 block px-4 py-2 rounded-full transition-colors"
           >
-            Traning
+            Training
           </a>
           <a
             href="/blogs"
-            className="block px-4 py-2 hover:bg-green-500 transition-colors rounded"
+            className="bg-blue-500 hover:bg-blue-600 block px-4 py-2 rounded-full transition-colors"
           >
             Blogs
           </a>
           <a
             href="/contact-us"
-            className="block px-4 py-2 hover:bg-green-500 transition-colors rounded"
+            className="bg-blue-500 hover:bg-blue-600 block px-4 py-2 rounded-full transition-colors"
           >
-            Contact US
+            Contact Us
           </a>
         </div>
       )}
     </nav>
+    </div>
+   
   );
 };
 

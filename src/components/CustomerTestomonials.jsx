@@ -59,7 +59,7 @@ const sliderSettings = {
 function CustomerTestimonials() {
   return (
     <div className="z-40 w-full mt-2 text-center  md:-mt-56">
-      <h1 className="text-green-600 text-3xl font-bold border-b-8 border-green-600 inline-block pb-2 mb-8">
+      <h1 className="text-blue-500 text-3xl font-bold border-b-8 border-blue-500 inline-block pb-2 mb-8">
         Customer Testimonials
       </h1>
 
@@ -73,7 +73,7 @@ function CustomerTestimonials() {
               <img
                 src={customer.image}
                 alt={`Customer ${customer.id}`}
-                className="w-20 h-20 object-cover rounded-full border-4 border-green-600"
+                className="w-20 h-20 object-cover rounded-full border-4 border-blue-500"
               />
             </div>
             <div className="mt-6 px-4 text-gray-700 text-sm">

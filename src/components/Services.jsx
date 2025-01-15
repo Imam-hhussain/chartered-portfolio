@@ -54,7 +54,7 @@ const Service = () => {
   return (
     <div className="md:-mt-52 mt-4">
       <div className=" ">
-        <h1 className="text-green sm:text-green-600 text-3xl font-bold border-b-8 border-green-600 inline-block pb-1">
+        <h1 className="text-blue-500 sm:text-blue-500 text-3xl font-bold border-b-8 border-blue-500 inline-block pb-1">
           Our Services
         </h1>
 
@@ -70,10 +70,10 @@ const Service = () => {
                 className="w-full h-48 object-cover"
               />
               <div className="p-4">
-                <h3 className="text-xl text-bold text-center mb-2">
+                <h3 className="text-xl font-bold text-blue-500 text-center mb-2">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 tex">{service.description}</p>
+                <p className="text-black">{service.description}</p>
               </div>
             </div>
           ))}

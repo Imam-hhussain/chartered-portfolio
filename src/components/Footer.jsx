@@ -5,17 +5,17 @@ function Footer() {
             <div className="text-sm mb-4">
               <p>
                 &copy; {new Date().getFullYear()} ©2024 Virtual Accountants LLC,<br/>
-                Designed & Developed by <span className="text-green-600 font-bold">TechCreator</span> 
+                Designed & Developed by <span className="text-blue-500 font-bold">TechCreator</span> 
               </p>
             </div>
             <div className="text-sm">
               <p>
                 <a href="/terms" className="hover:underline">
                   Terms & Conditions
-                </a>{" "}
+                </a>
                 |
                 <a href="/privacy" className="hover:underline">
-                  {" "}
+          
                   Privacy Policy
                 </a>
               </p>

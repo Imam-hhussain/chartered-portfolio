@@ -11,7 +11,7 @@ const software = [
     return (
       <div className="bg-gray-300 px-4 lg:px-28 py-12 md:pb-[300px] pb-6">
         <div className="text-center">
-          <h1 className="text-green-600 text-3xl font-bold border-b-8 border-green-600 inline-block pb-2">
+          <h1 className="text-blue-500 text-3xl font-bold border-b-8 border-blue-500 inline-block pb-2">
             Accountant Software We Use
           </h1>
         </div>

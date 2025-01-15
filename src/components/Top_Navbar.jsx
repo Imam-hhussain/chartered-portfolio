@@ -1,46 +1,48 @@
 import { FaEnvelope, FaPhoneAlt } from "react-icons/fa"; // Import icons
-import logo from "../../public/assets/Logo.png";
-import whatapp from "../../public/assets/whatsapp.png";
-
+import logo from "../../public/assets/logo.png";
+import { BsWhatsapp } from "react-icons/bs";
 const Top_Navbar = () => {
+ 
   return (
     <div className="relative top-4">
-      <div>
+      <div className="absolute top-0 w-full z-10">
         <div className="md:flex md:justify-between mx-4 lg:mx-28">
           <div>
             <div className="flex items-center w-full justify-between">
-              <img src={logo} alt="Logo" className="h-12 w-auto" />
-              <button className="px-3 py-2 text-green-600 border border-green-600 hover:bg-green-600 hover:text-white transition rounded-md lg:hidden md:hidden">
-                Free consultation
+              <img src={logo} alt="Logo" className="h-20 w-auto" />
+              <button className="px-3 font-bold py-2 text-white bg-blue-500 border border-blue-500 hover:bg-blue-600 hover:text-white transition rounded-md lg:hidden md:hidden">
+                Free Consultation
               </button>
             </div>
           </div>
           <div>
-            <div className="md:flex  items-center gap-4 w-full md:mt-0 mt-20">
+            <div className="md:flex items-center gap-4 w-full md:mt-0 mt-12">
               <div className="text-sm">
                 <div className="flex text-white mb-2">
-                  <FaEnvelope className="mr-2 mt-1 text-green-600" />
+                  <FaEnvelope className="mr-2 mt-1 text-blue-500" />
                   <span>info@account.ae</span>
                 </div>
                 <div className="flex items-center text-white">
-                  <FaPhoneAlt className="mr-2 text-green-600" />
+                  <FaPhoneAlt className="mr-2 text-blue-500" />
                   <span>+(971) 34729322973 | +(971) 34729322973</span>
                 </div>
               </div>
-              <div className="md:flex gap-4 ">
-                <button className="font-bold text-green-600 border border-green-600 p-2 hover:bg-green-600 hover:text-white transition rounded-md hidden lg:block">
+              <div className="md:flex md:pt-0 gap-4">
+                <button className="font-bold text-white bg-blue-500 border border-blue-500 p-2 hover:bg-blue-600 hover:text-white transition rounded-md hidden lg:block text-sm">
                   FREE CONSULTATION
                 </button>
-                <img
-                  className="h-10 sm:hidden hidden md:block"
-                  src={whatapp}
-                  alt="WhatsApp"
-                />
+                <a
+                  href= "https://wa.me/971589702466"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-1 rounded-md bg-blue-500 shadow-lg hidden md:block" // hidden on small screens, shown on medium and above
+                >
+                  <BsWhatsapp className="text-white" size={30} />
+                </a>
               </div>
-              <div>
-               
-                <button className="font-bold text-green-600 border border-green-600 p-2 hover:bg-green-600 hover:text-white transition rounded-md">
-                  CT CALCULATOR
+              <div className="pt-2 md:pt-0">
+                <button className="font-bold text-white bg-blue-500 border border-blue-500 p-2 hover:bg-blue-600 hover:text-white transition rounded-md">
+                  CT CALCULATOR 
                 </button>
               </div>
             </div>
