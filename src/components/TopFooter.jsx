@@ -15,7 +15,7 @@ function TopFooter() {
       <div className="container max-w-7xl md:pt-24">
         <div className="grid grid-cols-1 gap-6 text-center sm:text-left sm:grid-cols-2 lg:grid-cols-4 mx-4 md:mx-16 mb-8">
           <div>
-            <h3 className="text-xl font-bold mb-4 text-blue-500 flex md:justify-start justify-center items-center">
+            <h3 className="text-xl font-bold mb-4 text-blue-500 flex md:justify-start sm:justify-start justify-center items-center">
               <img src={Accountantlogo} className="h-20 w-auto" alt="" />
             </h3>
             <p className="text-sm mb-4 text-white">
@@ -66,9 +66,9 @@ function TopFooter() {
           </div>
 
           {/* Navigation Links */}
-          <div className="p-4 ">
+          <div className="">
             <h3 className="text-xl font-bold mb-4 text-blue-500">Navigation</h3>
-            <div className="flex flex-col space-y-2 mx-6">
+            <div className="flex flex-col space-y-2">
               <a
                 href="/"
                 className="hover:text-blue-500 transition-colors text-sm"
@@ -97,7 +97,7 @@ function TopFooter() {
           </div>
 
           <div className="px-0">
-            <img src={footerImg} alt="" />
+            <img className="pl-16 sm:pl-0" src={footerImg} alt="" />
             <div className="mt-2 bg-gray-800 py-4">
               <h1 className="py-4 text-xl font-bold text-blue-500">Free Consultation</h1>
               <p className="text-white">
