@@ -6,7 +6,6 @@ const Navbar = () => {
   return (
     <div className="absolute top-[85px] w-full px-4 md:px-4 lg:px-28">
       <nav className="bg-blue-500 text-white py-1 font-bold shadow-md top-0 z-50">
-        {/* Toggle Button (only visible on small screens) */}
         <div className="flex justify-end items-center px-6 sm:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -25,15 +24,13 @@ const Navbar = () => {
                 strokeLinejoin="round"
                 d={
                   isOpen
-                    ? "M6 18L18 6M6 6l12 12" // X icon
-                    : "M4 6h16M4 12h16M4 18h16" // Hamburger icon
+                    ? "M6 18L18 6M6 6l12 12" 
+                    : "M4 6h16M4 12h16M4 18h16" 
                 }
               />
             </svg>
           </button>
         </div>
-
-        {/* Desktop Navigation (visible on md and larger screens) */}
         <div className="hidden sm:flex justify-between items-center px-16">
           <a
             href="/"
@@ -60,8 +57,6 @@ const Navbar = () => {
             Contact Us
           </a>
         </div>
-
-        {/* Mobile Menu (visible only when toggled and on small screens) */}
         <div
           className={`${
             isOpen ? "block" : "hidden"
@@ -102,5 +97,4 @@ const Navbar = () => {
     </div>
   );
 };
-
 export default Navbar;

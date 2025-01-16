@@ -28,8 +28,8 @@ function ContactUs() {
         style={{ backgroundImage: `url(${bg})` }}
       ></div>
 
-      <div className="min-h-screen bg-gray-50 flex justify-center items-center">
-        <div className="bg-white p-10 rounded-lg shadow-lg w-full max-w-6xl">
+      <div className="bg-gray-50 flex justify-center items-center">
+        <div className="bg-white p-4 rounded-lg shadow-lg w-full max-w-6xl border mx-4 lg:mx-28 -mt-36">
           <div className="grid grid-cols-12 gap-6">
             <div className="col-span-12 md:col-span-6">
             <h2 className="text-3xl font-bold mb-2">Contact Us</h2>

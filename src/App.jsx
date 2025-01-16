@@ -1,7 +1,7 @@
 import Home from "./pages/Home";
 import ContactIcons from "./components/ContactIcons";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ContactUs from "./components/ContactUs";
+import ContactUs from "./pages/ContactUs";
 import TopFooter from "./components/TopFooter";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
