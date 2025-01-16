@@ -100,7 +100,7 @@ const Navbar = () => {
           </a>
           <a
             href="/contact-us"
-            className="px-4 pb-7 hover:bg-blue-600 rounded-full transition-colors flex items-center"
+            className="px-4 py-1 hover:bg-blue-600 rounded-full transition-colors flex items-center"
           >
               <div className=" mr-2 mb-1 text-xl text-center">
             <FaEnvelope/>

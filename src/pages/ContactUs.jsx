@@ -102,8 +102,7 @@ function ContactUs() {
               </p>
               <div className="space-y-4">
                 <p className="text-lg">
-                  <span className="font-semibold">Address:</span> 123 Main
-                  Street, Islamabad, Pakistan
+                  <span className="font-semibold">Address:</span>Office No 1907 World Trade Centre Sheikh Zayed Rd - Dubai - United Arab Emirates
                 </p>
                 <p className="text-lg">
                   <span className="font-semibold">Phone:</span> +971 58 970 2466
