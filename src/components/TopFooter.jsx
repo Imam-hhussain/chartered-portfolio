@@ -5,14 +5,14 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 
-import Accountantlogo from "../../public/assets/logo1.png";
+import Accountantlogo from "../../public/assets/AccLogo.png";
 
 import footerImg from "../../public/assets/footerImg.jpg";
 
 function TopFooter() {
   return (
-    <footer className="bg-gray-800 text-white py-8 rounded-t-[25px] mt-10 lg:px-16 px-4">
-      <div className="container max-w-7xl">
+    <footer className="bg-gray-800 text-white py-8 rounded-t-[25px]  lg:px-16 px-4">
+      <div className="container max-w-7xl md:pt-24">
         <div className="grid grid-cols-1 gap-6 text-center sm:text-left sm:grid-cols-2 lg:grid-cols-4 mx-4 md:mx-16 mb-8">
           <div>
             <h3 className="text-xl font-bold mb-4 text-blue-500 flex md:justify-start justify-center items-center">

@@ -1,14 +1,23 @@
 import { useState } from "react";
+import { FaHome } from "react-icons/fa";
+import { FaInfoCircle } from "react-icons/fa";
+import { FaBlogger } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handle = () => {
+    setIsOpen(!isOpen)
+  }
+
   return (
     <div className="absolute top-[85px] w-full px-4 md:px-4 lg:px-28">
-      <nav className="bg-blue-500 text-white py-1 font-bold shadow-md top-0 z-50">
-        <div className="flex justify-end items-center px-6 sm:hidden">
+      <nav className="bg-blue-500  text-white py-1 font-bold shadow-md top-0 z-50">
+        <div className="flex justify-end items-center px-6 sm:hidden ">
           <button
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={handle}
             className="focus:outline-none"
           >
             <svg
@@ -60,36 +69,42 @@ const Navbar = () => {
         <div
           className={`${
             isOpen ? "block" : "hidden"
-          } sm:hidden bg-blue-500 transition-all duration-300`}
+          } sm:hidden bg-blue-500 transition-all duration-300 `}
         >
           <a
             href="/"
-            className="block px-4 py-2 hover:bg-blue-600 rounded-full transition-colors"
+            className="px-4 py-1 hover:bg-blue-600 rounded-full transition-colors flex items-center"
           >
-            Home
-          </a>
-          <a
-            href="/accounting"
-            className="block px-4 py-2 hover:bg-blue-600 rounded-full transition-colors"
-          >
-            Accounting
+            <div className=" mr-2 mb-1 text-xl text-center">
+            <FaHome/>
+            </div>
+          Home
           </a>
           <a
             href="/about-us"
-            className="block px-4 py-2 hover:bg-blue-600 rounded-full transition-colors"
+            className="px-4 py-1 hover:bg-blue-600 rounded-full transition-colors flex items-center"
           >
+              <div className=" mr-2 mb-1 text-xl text-center">
+            <FaInfoCircle/>
+            </div>
             About Us
           </a>
           <a
             href="/blogs"
-            className="block px-4 py-2 hover:bg-blue-600 rounded-full transition-colors"
+            className="px-4 py-1 hover:bg-blue-600 rounded-full transition-colors flex items-center"
           >
+              <div className=" mr-2 mb-1 text-xl text-center">
+            <FaBlogger/>
+            </div>
             Blogs
           </a>
           <a
             href="/contact-us"
-            className="block px-4 py-2 hover:bg-blue-600 rounded-full transition-colors"
+            className="px-4 pb-7 hover:bg-blue-600 rounded-full transition-colors flex items-center"
           >
+              <div className=" mr-2 mb-1 text-xl text-center">
+            <FaEnvelope/>
+            </div>
             Contact Us
           </a>
         </div>

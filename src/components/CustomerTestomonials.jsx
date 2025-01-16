@@ -49,6 +49,12 @@ const sliderSettings = {
       {
         breakpoint: 768, // For mobile devices
         settings: {
+          slidesToShow: 2, // Show 1 testimonial
+        },
+      },
+        {
+        breakpoint: 640, // For mobile devices
+        settings: {
           slidesToShow: 1, // Show 1 testimonial
         },
       },
@@ -58,11 +64,11 @@ const sliderSettings = {
 
 function CustomerTestimonials() {
   return (
-    <div className="z-40 w-full mt-2 text-center  md:-mt-56">
+    <div className="z-40 w-full mt-2 md:-mt-56">
       <h1 className="text-blue-500 text-3xl font-bold border-b-8 border-blue-500 inline-block pb-2 mb-8">
         Customer Testimonials
       </h1>
-
+   
       <Slider {...sliderSettings} className="w-full">
         {customer.map((customer) => (
           <div

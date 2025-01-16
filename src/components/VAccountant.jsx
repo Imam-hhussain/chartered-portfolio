@@ -40,11 +40,11 @@
   ];
 const VAccountant = () => {
   return (
-    <div className="text-center">
-       <h1 className="text-blue-500 text-3xl font-bold border-b-8 border-blue-500 inline-block pb-2">
+    <div>
+       <h1 className=" text-blue-500 text-3xl font-bold border-b-8 border-blue-500 inline-block pb-2 text-start">
        Why Virtual Accountants
         </h1>
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 py-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 py-8 text-center">
           {services.map((service) => (
             <div
               key={service.id}
