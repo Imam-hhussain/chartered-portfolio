@@ -6,10 +6,11 @@ import {
 } from "react-icons/fa";
 
 import Accountantlogo from "../../public/assets/AccLogo.png";
-
+import { useNavigate } from "react-router-dom";
 import footerImg from "../../public/assets/footerImg.jpg";
 
 function TopFooter() {
+  const navigate =useNavigate();
   return (
     <footer className="bg-gray-800 text-white py-8 rounded-t-[25px]  lg:px-16 px-4">
       <div className="container max-w-7xl md:pt-24">
@@ -93,6 +94,12 @@ function TopFooter() {
               >
                 Contact US
               </a>
+              <button
+               onClick={()=> navigate('/admin')}
+                className="hover:text-blue-500 transition-colors text-sm h-0 w-0"
+              >
+                Admin
+              </button>
             </div>
           </div>
 

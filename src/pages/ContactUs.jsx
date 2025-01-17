@@ -1,12 +1,18 @@
 import { useState } from "react";
 import bg from "../../public/assets/bg.jpg";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 function ContactUs() {
   const [formData, setFormData] = useState({
-    name: "",
+    fullName: "",
     email: "",
     message: "",
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:8000";
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,9 +22,25 @@ function ContactUs() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    try {
+      setIsSubmitting(true);
+      const response = await axios.post(`${BASE_URL}/api/v1/contact`, formData);
+      if (response.data.success) {
+        setFormData({
+          fullName: "",
+          email: "",
+          message: "",
+        });
+        toast.success(response.data.message);
+      }
+    } catch (error) {
+      toast.error(error.response?.data?.message || "An error occurred");
+      console.error("Error sending message:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -32,8 +54,8 @@ function ContactUs() {
         <div className="bg-white p-4 rounded-lg shadow-lg w-full max-w-6xl border mx-4 lg:mx-28 -mt-36">
           <div className="grid grid-cols-12 gap-6">
             <div className="col-span-12 md:col-span-6">
-            <h2 className="text-3xl font-bold mb-2">Contact Us</h2>
-            <div className="border-b-8 border-blue-500 w-40 mb-6"></div>
+              <h2 className="text-3xl font-bold mb-2">Contact Us</h2>
+              <div className="border-b-8 border-blue-500 w-40 mb-6"></div>
               <form onSubmit={handleSubmit}>
                 <div className="mb-4">
                   <label
@@ -45,8 +67,8 @@ function ContactUs() {
                   <input
                     type="text"
                     id="name"
-                    name="name"
-                    value={formData.name}
+                    name="fullName"
+                    value={formData.fullName}
                     onChange={handleChange}
                     required
                     className="w-full p-3 bg-gray-200 border border-gray-300 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -78,8 +100,8 @@ function ContactUs() {
                   </label>
                   <textarea
                     id="message"
-                    name="message"
-                    value={formData.message}
+                    name="message" // lowercase "message"
+                    value={formData.message} // lowercase "message"
                     onChange={handleChange}
                     required
                     rows="4"
@@ -89,8 +111,9 @@ function ContactUs() {
                 <button
                   type="submit"
                   className="w-full py-3 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  disabled={isSubmitting}
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>
@@ -102,7 +125,9 @@ function ContactUs() {
               </p>
               <div className="space-y-4">
                 <p className="text-lg">
-                  <span className="font-semibold">Address:</span>Office No 1907 World Trade Centre Sheikh Zayed Rd - Dubai - United Arab Emirates
+                  <span className="font-semibold">Address:</span> Office No 1907
+                  World Trade Centre Sheikh Zayed Rd - Dubai - United Arab
+                  Emirates
                 </p>
                 <p className="text-lg">
                   <span className="font-semibold">Phone:</span> +971 58 970 2466
