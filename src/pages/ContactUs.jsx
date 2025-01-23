@@ -108,6 +108,7 @@ function ContactUs() {
                     className="w-full p-3 bg-gray-200 border border-gray-300 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   ></textarea>
                 </div>
+
                 <button
                   type="submit"
                   className="w-full py-3 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"

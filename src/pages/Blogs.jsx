@@ -1,74 +1,129 @@
+import { useBlogs } from "../customHooks/getallblogs";
 import bg from "../../public/assets/bg.jpg";
+import { useState } from "react";
 
-const blogs = [
-  {
-    id: 1,
-    title: "The Top 5 Tax-Saving Strategies for Businesses in 2025",
-    description:
-      "Learn how to optimize your taxes with actionable strategies. From leveraging deductions to investing in tax-saving bonds, we've got you covered.",
-    link: "/blogs/tax-saving-strategies",
-  },
-  {
-    id: 2,
-    title: "Why Accurate Bookkeeping Is the Backbone of Financial Success",
-    description:
-      "Discover the importance of accurate bookkeeping for financial health and how it ensures compliance during audits and tax filing.",
-    link: "/blogs/bookkeeping-tips",
-  },
-  {
-    id: 3,
-    title: "How Startups Can Prepare for Their First Audit",
-    description:
-      "Preparing for your startup's first audit? Explore key steps, common pitfalls, and how to make the process seamless.",
-    link: "/blogs/startup-audit-prep",
-  },
-  {
-    id: 4,
-    title: "The Future of Accounting: Trends Every Chartered Accountant Should Know",
-    description:
-      "Explore the latest trends in accounting, from AI and automation to blockchain and sustainability reporting.",
-    link: "/blogs/future-of-accounting",
-  },
-];
+const generateSlug = (title) =>
+  title
+    ? title
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "")
+    : "";
 
 function Blogs() {
+  const { blogs, loading, error } = useBlogs();
+  const [currentPage, setCurrentPage] = useState(1);
+  const blogsPerPage = 6;
+
+  const totalPages = Math.ceil((blogs?.length || 0) / blogsPerPage);
+  const displayedBlogs = blogs?.slice(
+    (currentPage - 1) * blogsPerPage,
+    currentPage * blogsPerPage
+  );
+
+  const handlePageChange = (page) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+    }
+  };
+
   return (
     <>
-      {/* Hero Section */}
       <div
         className="h-[400px] bg-cover bg-center"
         style={{ backgroundImage: `url(${bg})` }}
       ></div>
-
-      {/* Blog Container */}
       <div className="bg-gray-50 flex justify-center items-center">
-        <div className="bg-white p-10 rounded-lg shadow-lg w-full max-w-6xl mx-4 lg:mx-28 -mt-36">
+        <div className="bg-white p-10 rounded-lg shadow-lg w-full max-w-6xl mx-4 lg:mx-28 md:-mt-36">
           <div className="grid grid-cols-12 gap-6">
-            {/* Title Section */}
             <div className="col-span-12 md:col-span-6">
               <h2 className="text-3xl font-bold mb-2">Blogs</h2>
               <div className="border-b-8 border-blue-500 w-40 mb-6"></div>
             </div>
 
-            {/* Blog List */}
             <div className="col-span-12">
-              <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-                {blogs.map((blog) => (
-                  <div
-                    key={blog.id}
-                    className="border rounded-lg p-6 shadow hover:shadow-lg transition"
-                  >
-                    <h3 className="text-xl font-semibold mb-2">{blog.title}</h3>
-                    <p className="text-gray-700 mb-4">{blog.description}</p>
-                    <a
-                      href={blog.link}
-                      className="text-blue-500 hover:text-blue-700 transition"
-                    >
-                      Read More →
-                    </a>
+              {loading ? (
+                <div className="flex justify-center items-center h-[200px] text-gray-600 text-xl">
+                  Loading blogs...
+                </div>
+              ) : error ? (
+                <div className="flex justify-center items-center h-[200px] text-red-600 text-xl">
+                  Error loading blogs: {error.message}
+                </div>
+              ) : blogs?.length === 0 ? (
+                <div className="flex justify-center items-center h-[200px] text-gray-600 text-xl">
+                  No blogs found
+                </div>
+              ) : (
+                <>
+                  <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-center items-center">
+                    {displayedBlogs.map((blog) => (
+                      <div
+                        key={blog.id}
+                        className="border rounded-lg p-3 shadow hover:shadow-lg transition h-[420px] flex flex-col text-center"
+                      >
+                        <img
+                          src={blog.productImage || "placeholder.jpg"}
+                          alt={blog.title || "Blog Image"}
+                          className="object-cover rounded-t-lg mb-4 h-[200px] border"
+                          loading="lazy"
+                        />
+                        <h3 className="text-xl font-semibold mb-2 line-clamp-2">
+                          {blog.title || "Untitled"}
+                        </h3>
+                        <p className="text-gray-700 mb-4 line-clamp-3">
+                          {blog.description || "No description available."}
+                        </p>
+                        <a
+                          href={`/blog-detail/${generateSlug(blog.title)}`}
+                          className="text-blue-500 hover:text-blue-700 transition cursor-pointer"
+                        >
+                          Read More →
+                        </a>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+
+                  <div className="flex justify-center mt-6 space-x-4">
+                    <button
+                      onClick={() => handlePageChange(currentPage - 1)}
+                      disabled={currentPage === 1}
+                      className={`px-4 py-2 border rounded ${
+                        currentPage === 1
+                          ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                          : "bg-white text-blue-500 hover:bg-blue-600 hover:text-white"
+                      }`}
+                    >
+                      Previous
+                    </button>
+                    {Array.from({ length: totalPages }, (_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => handlePageChange(index + 1)}
+                        className={`px-4 py-2 border rounded ${
+                          currentPage === index + 1
+                            ? "bg-blue-500 text-white"
+                            : "bg-white text-blue-500 hover:bg-blue-600 hover:text-white"
+                        }`}
+                      >
+                        {index + 1}
+                      </button>
+                    ))}
+                    <button
+                      onClick={() => handlePageChange(currentPage + 1)}
+                      disabled={currentPage === totalPages}
+                      className={`px-4 py-2 border rounded ${
+                        currentPage === totalPages
+                          ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                          : "bg-white text-blue-500 hover:bg-blue-600 hover:text-white"
+                      }`}
+                    >
+                      Next
+                    </button>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>

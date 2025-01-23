@@ -3,7 +3,7 @@ import Service from "../components/Services"
 import VAccountant from "../components/VAccountant"
 import AccountSoftware from "../components/AccountSoftware"
 import CustomerTestomonials from "../components/CustomerTestomonials"
-import Blogs from "../components/BlogsAndNew"
+// import Blogs from "../components/BlogsAndNew"
 function Home() {
   return (
     <div>
@@ -17,7 +17,7 @@ function Home() {
        <CustomerTestomonials/>
        </div>
        <div>
-       <Blogs/>
+       {/* <Blogs/> */}
        </div>
        
     </div>
