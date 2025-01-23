@@ -10,8 +10,8 @@ function Contacts() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedContact, setSelectedContact] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1); // Track current page
-  const contactsPerPage = 6; // 6 contacts per page
+  const [currentPage, setCurrentPage] = useState(1);  // Track current page
+  const contactsPerPage = 5;  // 6 contacts per page
   const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:8000";
 
   const fetchContacts = async () => {
@@ -39,9 +39,7 @@ function Contacts() {
 
   const deleteContact = async (id) => {
     try {
-      const response = await axios.delete(
-        `${BASE_URL}/api/v1/delete-contact/${id}`
-      );
+      const response = await axios.delete(`${BASE_URL}/api/v1/delete-contact/${id}`);
       if (response.data.success) {
         fetchContacts();
         toast.success(response.data.message);
@@ -53,8 +51,7 @@ function Contacts() {
   };
 
   if (loading) return <div className="text-center py-4">Loading...</div>;
-  if (error)
-    return <div className="text-center text-red-500 py-4">{error}</div>;
+  if (error) return <div className="text-center text-red-500 py-4">{error}</div>;
 
   return (
     <div className="flex flex-col">
@@ -105,13 +102,7 @@ function Contacts() {
           {/* Pagination Controls */}
           <div className="flex justify-center mt-4 space-x-4">
             <button
-              onClick={() => {
-                const newPage = currentPage - 1;
-                if (newPage >= 1) {
-                  setCurrentPage(newPage);
-                  window.scrollTo(0, 0); // Scroll to top when page changes
-                }
-              }}
+              onClick={() => setCurrentPage(currentPage - 1)}
               disabled={currentPage === 1}
               className={`px-4 py-2 border rounded ${
                 currentPage === 1
@@ -124,10 +115,7 @@ function Contacts() {
             {Array.from({ length: totalPages }, (_, index) => (
               <button
                 key={index}
-                onClick={() => {
-                  setCurrentPage(index + 1);
-                  window.scrollTo(0, 0); // Scroll to top when page changes
-                }}
+                onClick={() => setCurrentPage(index + 1)}
                 className={`px-4 py-2 border rounded ${
                   currentPage === index + 1
                     ? "bg-blue-500 text-white"
@@ -138,13 +126,7 @@ function Contacts() {
               </button>
             ))}
             <button
-              onClick={() => {
-                const newPage = currentPage + 1;
-                if (newPage <= totalPages) {
-                  setCurrentPage(newPage);
-                  window.scrollTo(0, 0); // Scroll to top when page changes
-                }
-              }}
+              onClick={() => setCurrentPage(currentPage + 1)}
               disabled={currentPage === totalPages}
               className={`px-4 py-2 border rounded ${
                 currentPage === totalPages
@@ -171,9 +153,7 @@ function Contacts() {
               </div>
               <div>
                 <strong>Message:</strong>
-                <p className="mt-2 p-2 bg-gray-100 rounded">
-                  {selectedContact.message}
-                </p>
+                <p className="mt-2 p-2 bg-gray-100 rounded">{selectedContact.message}</p>
               </div>
             </div>
             <div className="mt-6 flex justify-end gap-4">

@@ -9,7 +9,7 @@ const FetchuserEmail = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const emailsPerPage = 9; 
+  const emailsPerPage = 6; 
 
   const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:8000";
 
@@ -65,7 +65,7 @@ const FetchuserEmail = () => {
 
       <div className="flex flex-1">
         <div>
-          <div className="lg:w-50 md:w-40 sm:w-30 w-20 h-[560px] bg-blue-500 text-white md:font-bold pt-10">
+          <div className="lg:w-50 md:w-40 sm:w-30 w-20 md:h-[560px] h-[462px] bg-blue-500 text-white md:font-bold pt-10">
             <ul className="space-y-10 pl-2">
               <li>
                 <a
@@ -108,7 +108,7 @@ const FetchuserEmail = () => {
           </div>
         </div>
         <div className="flex-1 p-4 overflow-auto">
-          <h1 className="text-2xl font-bold">User Emails</h1>
+          <h1 className="text-2xl font-bold text-center py-4">User Emails</h1>
 
           {loading && <p>Loading emails...</p>}
 
@@ -172,8 +172,8 @@ const FetchuserEmail = () => {
                     key={i + 1}
                     className={`px-4 py-2 mx-1 ${
                       currentPage === i + 1
-                        ? "bg-blue-700 text-white"
-                        : "bg-blue-500 text-white hover:bg-blue-700"
+                        ? "bg-blue-500 text-white"
+                        : "bg-gray-200 text-blue hover:bg-blue-700"
                     }`}
                     onClick={() => handlePageChange(i + 1)}
                   >
